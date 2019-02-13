@@ -1,0 +1,5 @@
+class Csv < ApplicationRecord
+
+   
+  
+end
