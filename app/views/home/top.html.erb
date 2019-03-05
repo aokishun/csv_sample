@@ -1,8 +1,40 @@
-<div class ="session">
+<div class ="session text-center">
    <div class="border col-12">
+   <div class="import ">
   <%= form_tag({controller: "home", action: "import", method: "post"}, {multipart: true}) do %>
   <%= file_field_tag :file %>
-  <%= submit_tag "オブジェクトを一括インポート" %>
+  <%= submit_tag "一括インポート" %>
 <% end %>
+   </div>
+    <h2 style="
+    padding: 22px;
+">会社マスタ一覧</h2>
+<h2>aaaaa</h2>
+<table border="1" align="center">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>会社名</th>
+      <th>住所</th>
+      <th>URL</th>
+      <th>作成日</th>
+      <th>更新日</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td class="column"><%= home.id %></td>
+        <td class="column"><%= home.name %></td>
+        <td class="column"><%= home.address %></td>
+        <td class="column"><%= home.url %></td>
+        <td class="column"><%= home.created_at %></td>
+        <td class="column"><%= home.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
    </div>
 </div>

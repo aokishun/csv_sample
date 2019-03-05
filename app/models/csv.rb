@@ -1,5 +1,0 @@
-class Csv < ApplicationRecord
-
-   
-  
-end
